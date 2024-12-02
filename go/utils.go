@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"strconv"
+	"strings"
 )
 
 func CheckError(err error) {
@@ -30,4 +32,26 @@ func Read(day int, sample bool) (reader *bufio.Reader) {
 	CheckError(err)
 
 	return bufio.NewReader(f)
+}
+
+func ArrayReader(reader *bufio.Reader) func() (arr []int, err error) {
+	return func() (arr []int, err error) {
+		s, err := reader.ReadString('\n')
+		if err != nil {
+			return nil, err
+		}
+
+		arr = []int{}
+
+		items := strings.Fields(s)
+		for _, item := range items {
+			num, err := strconv.Atoi(item)
+			if err != nil {
+				return nil, err
+			}
+			arr = append(arr, num)
+		}
+
+		return arr, nil
+	}
 }

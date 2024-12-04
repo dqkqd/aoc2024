@@ -1,6 +1,7 @@
-use std::{env::current_dir, error::Error, fs::File, io::BufReader};
+use anyhow::Result;
+use std::{env::current_dir, fs::File, io::BufReader};
 
-pub fn read(day: u16, sample: bool) -> Result<BufReader<File>, Box<dyn Error>> {
+pub fn read(day: u16, sample: bool) -> Result<BufReader<File>> {
     let input_folder = current_dir()?.parent().unwrap().join("input");
     let input_filename = if sample { "sample.txt" } else { "input.txt" };
     let file = input_folder

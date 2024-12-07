@@ -13,7 +13,7 @@ dev = ["mypy>=1.13.0", "ruff>=0.8.1"]
 [tool.ruff.lint]
 fixable = ["ALL"]
 select = ["ALL"]
-ignore = ["D", "ANN", "T201", "PLR2004", "ISC001", "COM812"]
+ignore = ["D", "ANN", "T201", "PLR2004", "ISC001", "COM812", "S101"]
 
 [tool.mypy]
 strict = true

@@ -10,7 +10,7 @@ import (
 
 func Read() ([]int, []int) {
 	reader := utils.Read(1, false)
-	arrayReader := utils.ArrayReader(reader)
+	arrayReader := utils.ArrayReader(reader, " ")
 
 	arr1 := []int{}
 	arr2 := []int{}

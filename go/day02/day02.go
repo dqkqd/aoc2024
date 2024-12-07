@@ -64,7 +64,7 @@ func isSafeRm(levels []int) bool {
 
 func Run(f IsSafe) {
 	reader := utils.Read(2, false)
-	arrayReader := utils.ArrayReader(reader)
+	arrayReader := utils.ArrayReader(reader, " ")
 
 	safeCount := 0
 	for {

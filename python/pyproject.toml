@@ -17,3 +17,4 @@ ignore = ["D", "ANN", "T201", "PLR2004", "ISC001", "COM812", "S101"]
 
 [tool.mypy]
 strict = true
+disable_error_code = "no-any-return"

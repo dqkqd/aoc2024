@@ -96,7 +96,7 @@ def read_instructions() -> list[Do | Dont | Mul]:
     return instructions
 
 
-def part1():
+def part1() -> None:
     ans = 0
     instructions = read_instructions()
 
@@ -106,11 +106,11 @@ def part1():
     print(ans)
 
 
-def part2():
+def part2() -> None:
     ans = 0
     instructions = read_instructions()
 
-    latest = Do()
+    latest: Do | Dont = Do()
     for ins in instructions:
         if isinstance(ins, Mul) and isinstance(latest, Do):
             ans += ins.lhs * ins.rhs

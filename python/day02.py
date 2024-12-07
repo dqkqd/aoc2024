@@ -24,12 +24,12 @@ def read_input() -> Generator[list[int]]:
     return (list(map(int, levels)) for levels in reports)
 
 
-def part1():
+def part1() -> None:
     safe_cnt = sum(map(safe, read_input()))
     print(safe_cnt)
 
 
-def part2():
+def part2() -> None:
     safe_cnt = sum(map(safe_rm, read_input()))
     print(safe_cnt)
 

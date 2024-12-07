@@ -50,7 +50,7 @@ def mapgood(word: list[str]) -> bool:
     return any(w == "MMSS" for w in gen)
 
 
-def part1():
+def part1() -> None:
     with read(day=4, sample=False) as f:
         words = [line.strip() for line in f.readlines()]
     h = len(words)
@@ -59,7 +59,7 @@ def part1():
     print(ans)
 
 
-def part2():
+def part2() -> None:
     with read(day=4, sample=False) as f:
         words = [line.strip() for line in f.readlines()]
     h = len(words)

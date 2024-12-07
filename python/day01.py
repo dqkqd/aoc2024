@@ -3,7 +3,7 @@ from collections import defaultdict
 from utils import read
 
 
-def part1():
+def part1() -> None:
     arr1, arr2 = [], []
     with read(day=1, sample=False) as f:
         for line in f.readlines():
@@ -17,9 +17,9 @@ def part1():
     print(s)
 
 
-def part2():
+def part2() -> None:
     arr1 = []
-    dict2 = defaultdict(lambda: 0)
+    dict2: dict[int, int] = defaultdict(lambda: 0)
     with read(day=1, sample=False) as f:
         for line in f.readlines():
             p1, p2 = map(int, line.split())
